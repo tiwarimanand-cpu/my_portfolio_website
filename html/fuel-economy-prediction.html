@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fuel Economy Analysis & Prediction | Machine Learning Project</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/projects.css">
+
+</head>
+<body>
+<a href="index.html#projects" class="back-link">
+  ← All Projects
+</a>
+
+
+
+<!-- PAGE LAYOUT -->
+<div class="page-layout">
+
+  <!-- LEFT VERTICAL NAVBAR -->
+  <nav class="side-nav">
+    <h4>ON THIS PAGE</h4>
+    <a href="#overview" class="nav-link active">Overview</a>
+    <a href="#why" class="nav-link">Why this project</a>
+    <a href="#objectives" class="nav-link">Objectives</a>
+    <a href="#structure" class="nav-link">Project Structure</a>
+    <a href="#dataset" class="nav-link">Dataset</a>
+    <a href="#methodology" class="nav-link">Methodology</a>
+    <a href="#results" class="nav-link">Results</a>
+    <a href="#learnings" class="nav-link">Key Learnings</a>
+    <a href="#conclusion" class="nav-link">Conclusion</a>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <main class="content-area">
+
+    <!-- OVERVIEW -->
+    <section id="overview">
+      <h2>Fuel Economy Project 🚗⛽</h2>
+      <p>
+        Fuel efficiency is a critical factor in vehicle design, cost optimization,
+        and environmental sustainability. This project converts multi-year fuel
+        economy data into actionable insights using data science and machine learning.
+      </p>
+
+      <ul>
+        <li>How has vehicle fuel efficiency evolved over time?</li>
+        <li>Which vehicle characteristics most influence City MPG?</li>
+        <li>Can ML models predict and classify eco-friendly vehicles?</li>
+      </ul>
+    </section>
+
+    <!-- WHY -->
+    <section id="why">
+      <h2>Why This Project?</h2>
+      <p>
+        Rather than relying on assumptions, this project analyzes real-world
+        fuel economy datasets across multiple years to understand trends and
+        performance using machine learning.
+      </p>
+    </section>
+
+    <!-- OBJECTIVES -->
+    <section id="objectives">
+      <h2>Objectives</h2>
+      <ul>
+        <li>Analyze fuel economy trends over 10 years</li>
+        <li>Study eco-friendly (SmartWay) vehicles</li>
+        <li>Predict City MPG using regression models</li>
+        <li>Classify vehicles as SmartWay / Non-SmartWay</li>
+        <li>Compare model interpretability</li>
+      </ul>
+    </section>
+
+    <!-- STRUCTURE -->
+    <section id="structure">
+      <h2>Project Structure</h2>
+      <pre class="structure">
+├── data/
+│   └── fuel_economy_datasets.xlsx
+│
+├── notebooks/
+│   └── Fuel_Economy_Analysis.ipynb
+│
+├── output/
+│   ├── visualizations/
+│   └── model_results/
+│
+└── README.md
+      </pre>
+    </section>
+
+    <!-- DATASET -->
+    <section id="dataset">
+      <h2>Dataset Description</h2>
+      <ul>
+        <li>City MPG</li>
+        <li>Highway MPG</li>
+        <li>Combined MPG</li>
+        <li>Cylinders</li>
+        <li>Fuel Type</li>
+        <li>Vehicle Class</li>
+        <li>SmartWay Indicator</li>
+      </ul>
+    </section>
+
+    <!-- METHODOLOGY -->
+    <section id="methodology">
+      <h2>Methodology</h2>
+
+      <h3>Step 1: Data Cleaning</h3>
+      <p>Standardized columns, handled missing values, and validated data.</p>
+
+      <h3>Step 2: Dataset Integration</h3>
+      <p>Merged yearly datasets and added a year column.</p>
+
+      <h3>Step 3: ML Preprocessing</h3>
+      <p>Feature encoding, scaling, and train-test splitting.</p>
+
+      <h3>Step 4: Linear Regression</h3>
+      <p>Predicted City MPG using mileage-related features.</p>
+
+      <h3>Step 5: Classification Models</h3>
+      <p>Logistic Regression and Decision Tree for SmartWay classification.</p>
+    </section>
+
+    <!-- RESULTS -->
+    <section id="results">
+      <h2>Key Results</h2>
+      <ul>
+        <li>Fuel efficiency improved consistently over the years</li>
+        <li>SmartWay vehicle adoption increased</li>
+        <li>Linear Regression showed strong predictive ability</li>
+        <li>Classification models were interpretable and stable</li>
+      </ul>
+    </section>
+
+    <!-- LEARNINGS -->
+    <section id="learnings">
+      <h2>Key Learnings</h2>
+      <ul>
+        <li>Data quality matters more than model complexity</li>
+        <li>Simple models can be highly effective</li>
+        <li>Interpretability is as important as accuracy</li>
+      </ul>
+    </section>
+
+    <!-- CONCLUSION -->
+    <section id="conclusion">
+      <h2>Conclusion</h2>
+      <p>
+        This project demonstrates how structured preprocessing and
+        interpretable machine learning models can transform raw automotive
+        data into meaningful insights.
+      </p>
+    </section>
+
+  </main>
+</div>
+
+<!-- BACK TO TOP BUTTON -->
+<button id="backToTop" title="Back to Top">↑</button>
+
+<!-- SCROLL SPY + BACK TO TOP SCRIPT -->
+<script>
+  const sections = document.querySelectorAll("section");
+  const navLinks = document.querySelectorAll(".nav-link");
+  const backToTop = document.getElementById("backToTop");
+
+  window.addEventListener("scroll", () => {
+    let current = "";
+
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 150;
+      if (scrollY >= sectionTop) {
+        current = section.getAttribute("id");
+      }
+    });
+
+    navLinks.forEach(link => {
+      link.classList.remove("active");
+      if (link.getAttribute("href") === "#" + current) {
+        link.classList.add("active");
+      }
+    });
+
+    // Back to Top visibility
+    if (window.scrollY > 400) {
+      backToTop.classList.add("show");
+    } else {
+      backToTop.classList.remove("show");
+    }
+  });
+
+  backToTop.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Medical Cost Prediction | Machine Learning Project</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/projects.css">
+</head>
+
+<body>
+
+<!-- BACK LINK -->
+<a href="index.html#projects" class="back-link">
+  ← All Projects
+</a>
+
+<!-- PAGE LAYOUT -->
+<div class="page-layout">
+
+  <!-- LEFT NAVIGATION -->
+  <nav class="side-nav">
+    <h4>ON THIS PAGE</h4>
+    <a href="#overview" class="nav-link active">Overview</a>
+    <a href="#why" class="nav-link">Why this project</a>
+    <a href="#objectives" class="nav-link">Objectives</a>
+    <a href="#structure" class="nav-link">Project Structure</a>
+    <a href="#dataset" class="nav-link">Dataset</a>
+    <a href="#methodology" class="nav-link">Methodology</a>
+    <a href="#results" class="nav-link">Results</a>
+    <a href="#learnings" class="nav-link">Key Learnings</a>
+    <a href="#conclusion" class="nav-link">Conclusion</a>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <main class="content-area">
+
+    <!-- OVERVIEW -->
+    <section id="overview">
+      <h2>Medical Cost Prediction 🏥📊</h2>
+
+      <p>
+        This project focuses on predicting medical insurance charges using
+        supervised machine learning. Healthcare expenses vary significantly
+        based on demographic and lifestyle factors, making cost estimation
+        a meaningful real-world regression problem.
+      </p>
+
+      <p>
+        Using the Kaggle Insurance Dataset, a Linear Regression model was
+        trained to estimate individual medical charges based on structured
+        tabular health data.
+      </p>
+
+      <ul>
+        <li>Can insurance charges be predicted using a linear model?</li>
+        <li>Which variables most strongly influence cost?</li>
+        <li>How much variance in charges can be explained by basic features?</li>
+      </ul>
+    </section>
+
+    <!-- WHY -->
+    <section id="why">
+      <h2>Why This Project?</h2>
+
+      <p>
+        Insurance pricing is influenced by both behavioral and physiological
+        variables. Understanding how these variables impact cost provides
+        insights into risk modeling and healthcare analytics.
+      </p>
+
+      <p>
+        This project was built to explore:
+      </p>
+
+      <ul>
+        <li>Linear relationships between health attributes and cost</li>
+        <li>Impact of smoking behavior on medical charges</li>
+        <li>Performance of a baseline regression model on tabular data</li>
+      </ul>
+    </section>
+
+    <!-- OBJECTIVES -->
+    <section id="objectives">
+      <h2>Objectives</h2>
+      <ul>
+        <li>Prepare and clean structured healthcare dataset</li>
+        <li>Encode categorical variables appropriately</li>
+        <li>Split data into training and testing sets (80/20)</li>
+        <li>Train Linear Regression model</li>
+        <li>Evaluate performance using R² score</li>
+        <li>Interpret model behavior and feature influence</li>
+      </ul>
+    </section>
+
+    <!-- STRUCTURE -->
+    <section id="structure">
+      <h2>Project Structure</h2>
+      <pre class="structure">
+├── data/
+│   └── insurance.csv
+│
+├── notebooks/
+│   └── medical_cost_prediction.ipynb
+│
+├── requirements.txt
+└── README.md
+      </pre>
+    </section>
+
+    <!-- DATASET -->
+    <section id="dataset">
+      <h2>Dataset Description</h2>
+
+      <p><strong>Source:</strong> Kaggle Insurance Dataset</p>
+
+      <ul>
+        <li>Age</li>
+        <li>Sex</li>
+        <li>BMI</li>
+        <li>Children</li>
+        <li>Smoker (Yes/No)</li>
+        <li>Region</li>
+      </ul>
+
+      <p><strong>Target Variable:</strong> Charges (Medical Insurance Cost)</p>
+    </section>
+
+    <!-- METHODOLOGY -->
+    <section id="methodology">
+      <h2>Methodology</h2>
+
+      <h3>Step 1: Data Preprocessing</h3>
+      <p>
+        Loaded dataset using Pandas. Categorical variables were encoded and
+        structured into numerical format suitable for regression.
+      </p>
+
+      <h3>Step 2: Train-Test Split</h3>
+      <p>
+        Dataset was split into 80% training and 20% testing using
+        scikit-learn's train_test_split.
+      </p>
+
+      <h3>Step 3: Model Training</h3>
+      <p>
+        Linear Regression model was trained using scikit-learn to
+        estimate medical insurance charges.
+      </p>
+
+      <h3>Step 4: Evaluation</h3>
+      <p>
+        Model performance was evaluated using R² score to measure
+        explained variance.
+      </p>
+    </section>
+
+    <!-- RESULTS -->
+    <section id="results">
+      <h2>Key Results</h2>
+
+      <ul>
+        <li>R² Score: <strong>0.743</strong></li>
+        <li>Model explains approximately 74% of variance in insurance charges</li>
+        <li>Smoking status had significant impact on predicted cost</li>
+        <li>Linear Regression provided strong baseline performance</li>
+      </ul>
+    </section>
+
+    <!-- LEARNINGS -->
+    <section id="learnings">
+      <h2>Key Learnings</h2>
+      <ul>
+        <li>Structured tabular data can be effectively modeled with simple regression</li>
+        <li>Behavioral variables (like smoking) dominate cost prediction</li>
+        <li>Interpretability is valuable in healthcare-related ML problems</li>
+        <li>Baseline models are important before moving to complex algorithms</li>
+      </ul>
+    </section>
+
+    <!-- CONCLUSION -->
+    <section id="conclusion">
+      <h2>Conclusion</h2>
+      <p>
+        This project demonstrates how a well-prepared dataset and a baseline
+        Linear Regression model can produce meaningful cost predictions in a
+        healthcare insurance setting. It highlights the importance of feature
+        understanding, preprocessing, and interpretability in applied machine learning.
+      </p>
+    </section>
+
+  </main>
+</div>
+
+<!-- BACK TO TOP BUTTON -->
+<button id="backToTop" title="Back to Top">↑</button>
+
+<!-- SCROLL SPY + BACK TO TOP -->
+<script>
+  const sections = document.querySelectorAll("section");
+  const navLinks = document.querySelectorAll(".nav-link");
+  const backToTop = document.getElementById("backToTop");
+
+  window.addEventListener("scroll", () => {
+    let current = "";
+
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 150;
+      if (scrollY >= sectionTop) {
+        current = section.getAttribute("id");
+      }
+    });
+
+    navLinks.forEach(link => {
+      link.classList.remove("active");
+      if (link.getAttribute("href") === "#" + current) {
+        link.classList.add("active");
+      }
+    });
+
+    if (window.scrollY > 400) {
+      backToTop.classList.add("show");
+    } else {
+      backToTop.classList.remove("show");
+    }
+  });
+
+  backToTop.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+</script>
+
+</body>
+</html>
